@@ -3,7 +3,10 @@ from django.shortcuts import render
 from katalog.models import CatalogItem
 
 def show_katalog(request):
+    # queries the database
     data_wishlist = CatalogItem.objects.all()
+    
+    # create dictionary for context
     context = {
             'name' : 'Azzuhri',
             'npm' : '2006489634',
