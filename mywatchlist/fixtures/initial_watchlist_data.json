@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
+        "fields": {
+            "watched" : "True",
+            "title" : "A Silent Voice", 
+            "rating" : 5,
+            "release_date" : "2016-09-17",
+            "review" : "Very emotional."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
+        "fields": {
+            "watched" : "True",
+            "title" : "Demon Slayer: Mugen Train", 
+            "rating" : 4,
+            "release_date" : "2020-10-16",
+            "review" : "Animation looks good, the ending is beautiful"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
+        "fields": {
+            "watched" : "True",
+            "title" : "Evangelion: 1.0 You Are (Not) Alone", 
+            "rating" : 4,
+            "release_date" : "2007-09-01",
+            "review" : "The same story as the original tv series"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
+        "fields": {
+            "watched" : "True",
+            "title" : "Evangelion: 2.0 You Can (Not) Advance", 
+            "rating" : 4,
+            "release_date" : "2009-07-27",
+            "review" : "Mostly follows the original series but with a different ending"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
+        "fields": {
+            "watched" : "True",
+            "title" : "Evangelion: 3.0 You Can (Not) Redo", 
+            "rating" : 3,
+            "release_date" : "2012-11-17",
+            "review" : "Original story, the characters are a little annoying"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
+        "fields": {
+            "watched" : "True",
+            "title" : "Evangelion 3.0 + 1.0 Thrice Upon a Time", 
+            "rating" : 5,
+            "release_date" : "2021-03-08",
+            "review" : "A beautiful ending to a long running franchise"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
+        "fields": {
+            "watched" : "True",
+            "title" : "I Want to Eat Your Pancreas", 
+            "rating" : 4,
+            "release_date" : "2018-09-01",
+            "review" : "A reminder of the mortality"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
+        "fields": {
+            "watched" : "True",
+            "title" : "Kizumonogatari I", 
+            "rating" : 4,
+            "release_date" : "2016-01-08",
+            "review" : "has a certain je ne sais quoi"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
+        "fields": {
+            "watched" : "True",
+            "title" : "Kizumonogatari II", 
+            "rating" : 4,
+            "release_date" : "2016-08-08",
+            "review" : "has a unique and interesting art style"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
+        "fields": {
+            "watched" : "True",
+            "title" : "Kizumonogatari III", 
+            "rating" : 4,
+            "release_date" : "2017-01-06",
+            "review" : "the animation has a certain surreal charm"
+        }
+    }
+]
