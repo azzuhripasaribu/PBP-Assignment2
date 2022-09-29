@@ -1,4 +1,3 @@
-from gettext import Catalog
 from django.shortcuts import render
 from katalog.models import CatalogItem
 

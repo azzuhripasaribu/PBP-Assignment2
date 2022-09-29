@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from argparse import Namespace
 from django.contrib import admin
 from django.urls import path, include
 
@@ -21,6 +22,6 @@ urlpatterns = [
     path('', include('example_app.urls')),
     path('katalog/', include('katalog.urls')),
     path('mywatchlist/', include('mywatchlist.urls')),
+    path('todolist/', include('todolist.urls')),
 ]
 
-# TODO: Implement Routings Here
