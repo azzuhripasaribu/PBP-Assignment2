@@ -5,41 +5,47 @@
 {% endblock meta %}
 
 {% block content %}
+<div class="container-md border" style="background-color:white;">
+    <div class="row">
+        <div class="col">
+            <div class = "login" style="padding: 5% 20% 10% 10%;">
 
-<div class = "login">
+                <h1>Login</h1>
 
-    <h1>Login</h1>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>Username: </td>
+                            <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                        </tr>
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
+                        <tr>
+                            <td>Password: </td>
+                            <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                        </tr>
 
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+                        <tr>
+                            <td></td>
+                            <td><input class="btn btn-primary" type="submit" value="Login"></td>
+                        </tr>
+                    </table>
+                </form>
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+                <p>Don't have an account?</p> 
+                <button class="btn btn-outline-primary"><a href="{% url 'todolist:register' %}">Create Account</a></button>
 
-    Don't have an account? <a href="{% url 'todolist:register' %}">Create Account</a>
-
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

@@ -5,25 +5,27 @@
 {% endblock meta %}
 
 {% block content %}
-<p>Hi! {{ user_name }}</p>
-<button><a href="{% url 'todolist:addtask' %}">Add New Task</a></button>
-
-<table>
-    <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Description</th>
-    </tr>
-    {% for task in task_list %}
-    <tr>
-        <th>{{task.user.username}}</th>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-    </tr>
-    {% endfor %}
-</table>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-
+<div class="container" style="padding:10px">
+    <p>Hi! {{ user_name }}</p>
+    <button class="btn btn-primary"><a href="{% url 'todolist:addtask' %}">Add New Task</a></button>
+    <div class="table-responsive-md">
+        <table class="table">
+            <tr>
+                <th>User</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+            {% for task in task_list %}
+            <tr>
+                <td>{{task.user.username}}</td>
+                <td>{{task.date}}</td>
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <button class="btn btn-secondary btn-sm"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+</div>
 {% endblock content %}

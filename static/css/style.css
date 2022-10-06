@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(74, 131, 184);
+}
+.container {
+    background-color: white;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.btn a {
+    color: inherit;
+}
+
