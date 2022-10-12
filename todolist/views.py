@@ -1,10 +1,11 @@
 from xmlrpc.client import DateTime
+from django.core import serializers
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from todolist.models import Task, TaskForm
 from datetime import date
@@ -19,6 +20,13 @@ def show_todolist(request):
         'user_name': request.COOKIES['user_name']
     }
     return render(request, 'todolist.html', context)
+
+@login_required
+def show_todolist_json(request):
+    # queries the database
+    tasks = Task.objects.all()
+    json = serializers.serialize("json",tasks)
+    return HttpResponse(json, content_type="application/json")
 
 @login_required(login_url='/todolist/login')
 def add_new_task(request):

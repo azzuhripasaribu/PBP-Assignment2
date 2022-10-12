@@ -1,7 +1,7 @@
 ## What Does CSRF Token Do
 CSRF token is used to authenticate the form that is sent and prevents cross site request forgery attacks
 
-## Can we create the <form> element manually (without using a generator?
+## Can we create the \<form> element manually (without using a generator?
 
 Yes, we can create a form manually using HTML \<input> tag to get user input
 

@@ -2,12 +2,35 @@
 
 {% block meta %}
 <title>Todolist</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(()=>{
+        let CurrentPath = window.location.href + "json";
+        $.get(CurrentPath,(data)=>{
+            for(var i = 0; i < data.length; i++) {
+                let task = data[i].fields;
+                let user = task.user;
+                let date = task.date;
+                let title = task.title;
+                let description = task.description;
+                console.log(task);
+                $("<tr><td>"+user+"</td><td>"+date+"</td><td>"+title+"</td><td>"+description+"</td></tr>").appendTo("table");
+            }
+        });
+
+        $(".addTask").on("click", () => {
+            $(".modal-body").load("{% url 'todolist:addtask' %}", () => {
+                $("#addTaskModal").modal({show:true});
+        });
+    });
+    });
+</script>
 {% endblock meta %}
 
 {% block content %}
 <div class="container" style="padding:10px">
     <p>Hi! {{ user_name }}</p>
-    <button class="btn btn-primary"><a href="{% url 'todolist:addtask' %}">Add New Task</a></button>
+    <button class="btn btn-primary addTask" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add New Task</button>
     <div class="table-responsive-md">
         <table class="table">
             <tr>
@@ -16,16 +39,24 @@
                 <th>Title</th>
                 <th>Description</th>
             </tr>
-            {% for task in task_list %}
-            <tr>
-                <td>{{task.user.username}}</td>
-                <td>{{task.date}}</td>
-                <td>{{task.title}}</td>
-                <td>{{task.description}}</td>
-            </tr>
-            {% endfor %}
         </table>
     </div>
-    <button class="btn btn-secondary btn-sm"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    <button class="btn btn-secondary btn-sm addTask"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+</div>
+
+<div class="modal" tabindex="-1" id="addTaskModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        <div class="modal-body">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock content %}
